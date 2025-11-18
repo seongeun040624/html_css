@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빈 공간 채우는 그리드의 auto-fit, auto-fill</title>
+    <style>
+        .cnt4{
+            width: 100%;
+            max-width: 1440px; /* > 반응형에서 최대로 키웟을때? 보이는 최대 넓이 근데 밑에 미디어스크린잇으면 소용없는거아닌가 */
+            margin: 10px auto;
+            display: grid;
+            grid-template-rows: repeat(3, 200px);
+            gap: 5px;
+            grid-template-areas: 
+            "item1 item1 item1"
+            "item2 item3 item3"
+            "item2 item4 item5"
+        }
+        .item1{
+            background: red;
+            grid-area: item1; /* 이름을 지어야 함 위랑 동일하게 */
+        }
+        .item2{
+            background: rgb(0, 0, 255);
+            grid-area: item2;
+        }
+        .item3{
+            background: rgb(0, 255, 140);
+            grid-area: item3;
+        }
+        .item4{
+            background: rgb(255, 115, 0);
+            grid-area: item4;
+        }
+        .item5{
+            background: rgb(255, 234, 0);
+            grid-area: item5;
+        }
+
+        @media screen and (max-width: 768px) {
+            .cnt4{
+                display: block;
+            }
+            .cnt4>div{
+                height: 200px;
+            }
+        }
+
+        .gallery{
+            width: 100%;
+            display: grid;
+            gap: 5px;
+            grid-template-rows: repeat(3, 300px);
+            grid-template-areas: 
+            "img1 img1 img2"
+            "img1 img1 img3"
+            "img4 img5 img6"
+            ;
+        }
+        .img1{
+            grid-area: img1;
+        }
+        .img2{
+            grid-area: img2;
+        }
+        .img3{
+            grid-area: img3;
+        }
+        .img4{
+            grid-area: img4;
+        }
+        .img5{
+            grid-area: img5;
+        }
+        .img6{
+            grid-area: img6;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="cnt4">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+    </div>
+    <div class="gallery">
+        <img src="https://cdn.pixabay.com/photo/2022/12/10/11/05/snow-7646952_640.jpg" alt="img1" class="img1">
+        <img src="https://cdn.pixabay.com/photo/2024/11/27/05/42/ai-generated-9227230_640.jpg" alt="img1" class="img2">
+        <img src="https://cdn.pixabay.com/photo/2023/12/07/10/54/winter-8435314_640.jpg" alt="img1" class="img3">
+        <img src="https://cdn.pixabay.com/photo/2020/01/05/07/22/winter-4742436_640.jpg" alt="img1" class="img4">
+        <img src="https://cdn.pixabay.com/photo/2017/02/15/11/15/wintry-2068298_640.jpg" alt="img1" class="img5">
+        <img src="https://cdn.pixabay.com/photo/2024/01/14/21/44/snowman-8508881_640.jpg" alt="img1" class="img6">
+        
+    </div>
+</body>
+</html>

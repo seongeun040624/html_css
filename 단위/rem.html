@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem</title>
+    <style>
+        *{font-size: 100%;}
+        html{font-size: 20px;}
+        p{font-size: 1em;} /* html에 적용된 크기x1 */
+        p>span{font-size: 3em;}/*20x3 돼서 60px짜리 글씨*/
+    </style>
+</head>
+<body>
+    <p>
+        최상위 html에 적용된 값 기준
+        <span>rem 단위</span>
+    </p>
+</body>
+</html>

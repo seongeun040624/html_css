@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>이미지 배치하고 롤오버시 블러 효과 적용하기</title>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			/* *{margin: 0; padding: 0;}
+			body{margin-top: 30px;}
+			h1{
+				color: #fff;
+				text-shadow: 0 0 10px #000;
+				text-align: center;
+				font-size: 3em;
+				font-style: italic;
+			}
+			#bookList{
+				background: url(./images/book_bg.png) no-repeat;
+				width: 498px;
+				height: 246px;
+				margin: 20px auto;
+				border: 5px solid #ccc;
+				border-radius: 20px;
+			}
+			#bookList ul{
+				list-style: none;
+				display: flex;
+				position: relative;
+				top: 25px; left: 20px;
+			}
+			#bookList ul li{margin-right: 63px;}
+			#bookList ul li a{}
+			#bookList ul li a span{}
+			#bookList ul li:hover a span img{
+				box-shadow: 0 0 50px #090;
+			}
+			#bookList ul li a span span.hit{}
+			#bookList ul li a span img{} */
+
+			*{margin: 0; padding: 0;}
+			body{margin-top: 30px;}
+			body h1{
+				color: #fff;
+				text-shadow: 0 0 20px #000;
+				text-align: center;
+				font-size: 3em;
+				font-style: italic;
+			}
+			body #bookList{
+				background: url(./images/book_bg.png) no-repeat;
+				border: 5px solid #ccc;
+				border-radius: 20px;
+				width: 498px;
+				height: 246px;
+				margin: 20px auto;
+				box-shadow: 0 0 10px #ccc;
+			}
+			body #bookList ul{
+				list-style: none;
+				display: flex;
+				position: relative;
+				top: 25px; left: 20px;
+			}
+			body #bookList ul li{
+				margin-right: 63px;
+				position: relative;
+			}
+			body #bookList ul li:hover a span img{
+				box-shadow: 0 0 50px green;
+			}
+			.hit{
+				background: url(./images/ico_hot.png);
+				width: 40px;
+				height: 40px;
+				display: block; /* 이미지(span)는 인라인 요소라서 넓이 높이 못 가짐 > 블록 요소로 만들고 넓이 높이 주기 */
+				position: absolute; /* relative 해도 되긴 하는데? li를 부모 요소로 설정하고 움직임 */
+				top: -15px; left: -10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>New Book</h1>
+		<div id="bookList">
+			<ul>
+				<li>
+					<a href="#">
+						<span>
+							<img src="images/book1.png" width="107" height="156" alt="book1" class="frame"/>
+							<span class="hit"></span>
+						</span>
+					</a>
+					</li>
+				<li>
+					<a href="#">
+						<span>
+							<img src="images/book2.png" width="107" height="156" alt="book2" class="frame"/>
+							<span class="hit"></span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span>
+							<img src="images/book3.png" width="107" height="156" alt="book3" />
+							<span class="hit"></span>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

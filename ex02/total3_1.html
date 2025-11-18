@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시멘틱 정답지</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        #wrap{
+            width: 500px;
+            margin: 50px auto;
+        }
+        #wrap h1{text-align: center;}
+        .box{
+            width: 100%;
+            border: 5px solid #000;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        header{
+            border: 5px solid #000;
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        nav{
+            border: 5px solid #000;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        nav div{background: cyan; padding: 20px;}
+        .nav1{width: 25%;}
+        .nav2{width: 48%;}
+
+        article{
+            border: 5px solid #000;
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        article>p{
+            text-align: left;
+            font-weight: 400;
+            font-size: 16px;
+        }
+        article figure{
+            border: 5px solid #000;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        article figcaption{
+            background-color: pink;
+            padding: 20px;
+        }
+
+        footer{
+            border: 5px solid #000;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        footer>div{
+            background: red;
+            padding: 20px;
+
+        }
+        .footer1{width: 25%;}
+        .footer2{width: 48%;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>Semantic</h1>
+        <div class="box">
+            <header>header
+                <nav>
+                    <div class="nav1">&nbsp;</div>
+                    <div class="nav2">nav</div>
+                    <div class="nav1">&nbsp;</div>
+                </nav>
+            </header>
+            <article>article
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing. <br>
+                    Labore a accusantium nesciunt illo consectetur, <br>
+                    eaque corrupti in veniam quam, veritatis tempora.
+                </p>
+                <figure>
+                    <figcaption>figure</figcaption>
+                </figure>
+            </article>
+            <footer>
+                <div class="footer1">&nbsp;</div>
+                <div class="footer2">footer</div>
+                <div class="footer1">&nbsp;</div>
+
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

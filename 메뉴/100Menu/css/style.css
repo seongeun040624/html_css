@@ -1,0 +1,212 @@
+ /* *{box-sizing: border-box;}
+a{text-decoration: none; color: #000;}
+#wrap{}
+#header{
+    width: 100%;
+    height: 100px;
+    padding: 0 50px;
+    background: rgba(255,255,255,.6);
+    position: fixed;
+    top: 0; left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#nav{}
+#nav>ul{display: flex;}
+#nav>ul>li{
+    width: 150px;
+    text-align: center;
+}
+#nav>ul>li:nth-child(1)>a{color: red;}
+#nav>ul>li:nth-child(2)>a{color: violet;}
+#nav>ul>li:nth-child(3)>a{color: green;}
+#nav>ul>li:nth-child(4)>a{color: #0ac6ff;}
+#nav>ul>li:nth-child(5)>a{color: orange;}
+#nav>ul>li>a{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 35px 24px;
+}
+
+#nav .bg{
+    transition: height  높이만 애니메이션되게  .3s, background .3s .3s;
+    width: 100%;
+    height: 0;
+    background: #00c8ff;
+    position: absolute;
+    top: 100px; left: 0;
+}
+#nav:hover .bg{height: 216px;}
+#nav>ul>li>ul{
+    position: absolute;
+    top: 100px;
+    width: 150px;
+    height: 0;
+    overflow: hidden;
+}
+#nav:hover>ul>li>ul{
+    height: 216px;
+    transition: height .3s;
+}
+#nav>ul>li:hover>ul{
+    background: rgba(255, 255, 255, .5);
+    height: 216px;
+}
+#nav>ul>li>ul>li{position: relative;} > 애니메이션 효과를 주기 위한 기준점
+#nav>ul>li>ul>li:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 50%; bottom: 0;
+    height: 1px;
+    background: #fff;
+    transition: .3s;
+}
+#nav>ul>li>ul>li:hover:after{
+    width: 100%;
+    left: 0;
+}
+#nav>ul>li>ul>li>a{
+    display: block;
+    padding: 10px 0;
+    font-weight: 700;
+    color: #fff;
+}
+
+.mainSlide{
+    width: 100%;
+    height: 800px;
+    background: url(../image/bg.jpg) no-repeat center center/cover;
+}
+.searchbox{
+    background: #0ac6ff url(../image/totalsearch_ico.png) no-repeat right 20px center;
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.searchbox input{
+    border: none;
+    background: none;
+    color: #fff;
+}
+.searchbox input:focus{outline: none;}
+#content{
+    width: 100%;
+    height: 800px;
+    background: pink;
+}
+#footer{
+    width: 100%;
+    height: 100px;
+    background-color: #555;
+} */
+
+*{box-sizing: border-box;}
+
+a{text-decoration: none; color: #000;}
+
+#header{
+    width: 100%;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex; /* > h1,nav, seackbox를 옆으로 놔준거 */
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0; left: 0;
+    padding: 0 50px;
+}
+
+#nav{}
+#nav .bg{
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 100px; left: 0;
+    background: rgba(62, 62, 255, 0.603);
+    transition: height .3s;
+}
+#nav:hover .bg{height: 216px;}
+#nav>ul{display: flex;}/* 얘한테 display를 해야 원댑스 메뉴가 옆으로 생김 */
+#nav>ul>li{
+    text-align: center;
+}
+#nav>ul>li>a{
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 35px 10px;
+    width: 150px;
+}
+#nav>ul>li:nth-child(1)>a{color: orangered;}
+#nav>ul>li:nth-child(2)>a{color: darkgoldenrod;}
+#nav>ul>li:nth-child(3)>a{color: teal;}
+#nav>ul>li:nth-child(4)>a{color: midnightblue;}
+#nav>ul>li:nth-child(5)>a{color: blueviolet;}
+
+#nav>ul>li>ul{
+    position: absolute;
+    top: 100px;
+    width: 150px;
+    overflow: hidden;
+    height: 0;
+    transition: height .4s;
+}
+#nav:hover>ul>li>ul{height: 216px;}/* 넓이값을 주는 게 아니라 높이값을 줘야 보임 */
+#nav>ul>li:hover>ul{
+    height: 216px;
+    background: #ffffff9c;
+}
+#nav>ul>li>ul>li{}
+#nav>ul>li>ul>li>a{
+    display: block;
+    padding: 10px 0;
+    color: #fff;
+}
+#nav>ul>li>ul>li>a:hover{
+    font-weight: bold;
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+.searchbox{
+    background: lavender url(../image/totalsearch_ico.png) no-repeat right 20px center;
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+}
+.searchbox>input{
+    background: none;
+    border: none;
+    width: 260px;
+    height: 40px;
+    padding: 15px;
+    color: #888;
+}
+.searchbox>input:focus{outline: none;}
+
+main{
+    width: 100%;
+    height: 1600px;
+    background: #ddd;
+}
+main .mainSlide{
+    background: url(../image/bg.jpg) no-repeat center center/cover;
+    width: 100%;
+    height: 800px;
+}
+main #content{
+    background: lavender;
+    width: 100%;
+    height: 800px;
+}
+
+#footer{
+    width: 100%;
+    height: 300px;
+    background: #999;
+}

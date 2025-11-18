@@ -1,0 +1,44 @@
+*{margin: 0; padding: 0;}
+
+a{text-decoration: none; color: #000;}
+ul{list-style: none;}
+
+nav{
+    background: #777;
+    width: 100%;
+    height: 40px;
+}
+nav>ul{
+    height: 100%;
+    display: flex;
+    align-items: center; /* 높이를 지정해줘야 함 */
+    justify-content: center;
+}
+nav>ul>li{
+    position: relative; /* 2 부모로 지정 후 위치 옮김 */
+}
+nav>ul>li>a{
+    padding: 10px 20px;
+    color: #fff;
+}
+nav>ul>li>ul{
+    display: none; /* 드롭다운 메뉴가 바로 보이지 않게 */
+    position: absolute; /* 1 그자리에서 뜨게 */
+    top: 30px; left: 0;
+    background: #ff0;
+    width: 100%;
+}
+nav>ul>li:hover>ul{
+    display: block; /* 드롭다운 메뉴가 아래로 떨어지게? */
+}
+nav>ul>li>ul>li{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+nav>ul>li>ul>li:hover{
+    background: #00a331;
+}
+nav>ul>li>ul>li:hover>a{
+    color: #fff;
+}

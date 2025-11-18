@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> 그라데이션 메뉴바 만들기 </title>
+		<meta charset="UTF-8" />
+		<style type="text/css">
+			body {
+				font:0.95em Arial,sans-serif;
+				margin:50px 0px;
+				}
+			h1 {
+				text-shadow:0px 0px 5px #666;
+				text-align:center;
+				font-size:3em;
+				letter-spacing:5px;
+				color:#d81b21;
+				text-transform:uppercase;
+				}
+			/* Gradient Menu Bar */
+			nav{background: linear-gradient(orangered, red);}
+			nav #topNav{
+				display: flex;
+				list-style: none;
+				justify-content: center;
+			}
+			nav #topNav li:hover{
+				background: linear-gradient(#2a2a2a, #666);
+			}
+			nav #topNav a{
+				text-decoration: none;
+				color: #fff;
+				font-weight: bold;
+				font-size: 20px;
+				text-transform: uppercase;
+				padding: 20px;
+				display: inline-block; /* 이걸 해줘야 a에 적용하는 패딩값이 화면에 보임 */
+				position: relative; /* 현재는 컨텐츠를 썼기 때문에 굳이 필요는 없지만 이미지 등이 들어오면 꼭 써야 함 */
+			}
+			nav #topNav a::after{content: "/";}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<h1>C/S/S/   s/h/o/e/s -  s/h/o/p</h1>
+		</header>
+		<nav>
+			<ul id="topNav">
+				<li><a href="">best 50</a></li> 
+				<li><a href="">high heel</a></li>  
+				<li><a href="">casual</a></li> 
+				<li><a href="">flat</a></li> 
+				<li><a href="">boots</a></li> 
+				<li><a href="">sandal</a></li> 
+				<li><a href="">bag</a></li> 
+				<li><a href="">acc</a></li> 
+				<li><a href="">sale</a></li> 
+			</ul>
+		</nav>
+	</body>
+</html>

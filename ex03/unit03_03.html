@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> 모서리가 둥근 테두리 만들기 </title>
+		<meta charset="UTF-8" />
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			body{
+				margin: 50px;
+			}
+			div{
+				border: 15px solid red;
+				border-radius: 20px;
+				padding: 10px;
+				background: #717171;
+				
+			}
+			p{
+				margin: 30px;
+				background: white;
+				padding: 10px;
+				line-height: 30px;
+			}
+			.round1{
+				border: 10px solid orange;
+				border-radius: 30px 0;
+				
+			}
+			.round2{
+				border: 10px solid rgb(233, 68, 255);
+				border-radius: 30px 0 0 0;
+			}
+			/* 혼자(가운데 여백이 다름)
+			 공통속성 p에 묶어서 써도 됨, p를 round보다 위로 써야 했는 듯*/
+
+			
+			/*  *{margin: 0; padding: 0;}
+			 body{margin: 50px;}
+			 div{
+				background: #626262;
+				border: 10px solid red;
+				border-radius: 20px;
+			 }
+			 p{
+				background: #fff;
+				margin: 40px;
+				padding: 15px;
+				line-height: 150%;
+			 }
+			 p.round1{
+				border-radius: 40px 0;
+				border: 15px solid #ff9933;
+			 }
+			 .round2{
+				border-radius: 40px 0 0 0;
+				border: 15px solid #ff33eb;
+			 }
+			p와 round가 동일 선상에 있기 때문에 선택자를 쓸 때 띄어쓰기를 사용하지 않음
+			p.round1이라고 불러도 되고 p를 생략해도 됨*/
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<p class="round1">
+				Whenever you are asked if you can do a job, tell <br />
+				&quot;Certainly I can!&quot; Then get busy	and find out how to do it. <br />
+				(Theodore Roosevelt)  
+			</p>
+			<p class="round2">
+				당신이 어떤 일을 해낼 수 있는지 누군가가 물어보면 대답해라. <br />
+				&quot;물론이죠!&quot; 그 다음 어떻게 그 일을 해낼 수 있을지 부지런히 고민하라. <br />
+				(시어도어 루스벨트) 
+			</p>
+		</div>
+	</body>
+</html>

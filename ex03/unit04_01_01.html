@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background 범위</title>
+    <style>
+        #container{
+            margin: 50px;
+        }
+        #container .desc{
+            width: 200px;
+            background: yellow;
+            border: 5px dotted #000;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        #container #clip-border{
+            background-clip: border-box;
+        }
+        #container #clip-padding{
+            background-clip: padding-box;
+        }
+        #container #clip-content{
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="desc" id="clip-border">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Enim voluptates officiis quis consequuntur dignissimos excepturi, dolore eveniet quibusdam 
+            temporibus similique vero modi. Dolores nobis dolore obcaecati! Iusto quod minima doloribus.
+        </div>
+        <div class="desc" id="clip-padding">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Enim voluptates officiis quis consequuntur dignissimos excepturi, dolore eveniet quibusdam 
+            temporibus similique vero modi. Dolores nobis dolore obcaecati! Iusto quod minima doloribus.
+        </div>
+        <div class="desc" id="clip-content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Enim voluptates officiis quis consequuntur dignissimos excepturi, dolore eveniet quibusdam 
+            temporibus similique vero modi. Dolores nobis dolore obcaecati! Iusto quod minima doloribus.
+        </div>
+    </div>
+</body>
+</html>

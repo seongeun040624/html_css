@@ -1,0 +1,115 @@
+/* nav{
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    height: 80px;
+}
+nav> .bg{
+    width: 100%;
+    height: 240px;
+    background: yellowgreen;
+    position: absolute;
+    top: 80px;
+    display: none; 처음부터 보이면 안 되기 때문에 none
+}
+nav:hover> .bg{
+    display: block;
+}
+nav>ul{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center; 사용하려면 현재 요소에 높이 값이 지정돼야 함
+}
+nav>ul>li{}
+nav>ul>li>a{
+    text-decoration: none;
+    color: #333;
+    transition: .3s;
+    display: block;
+    padding: 10px 20px;
+}
+nav>ul>li:hover>a{
+    color: red;
+}
+nav>ul>li>ul{
+    display: none;
+    position: absolute;
+    top: 80px;
+    width: 130px;
+    #2. 투댑스 메뉴가 전체적으로 한번에 켜지므로 넓이를 설정해서
+    글자를 중앙으로 옮겨야 함 
+}
+nav:hover>ul>li>ul{
+    display: block;
+}
+nav>ul>li>ul>li{
+    text-align: center; #1. 중앙으로 옮겨도 먹히지 않음
+    width: 100%; #3. 부모의 넓이 값을 가지게 함
+}
+nav>ul>li>ul>li>a{
+    display: block; 패딩값이 적용되려면 block 요소로 전환해야 함
+    padding: 20px 0;
+    text-decoration: none;
+    color: #fff;
+}
+nav>ul>li>ul>li>a:hover{
+    text-decoration: underline;
+} */
+
+nav{
+    border-bottom: 1px solid #555;
+    height: 80px;
+    width: 100%;
+    background: #fff;
+}
+nav:hover .bg{
+    display: block;
+}
+nav .bg{
+    background: green;
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    top: 80px;
+    display: none;
+}
+nav>ul{
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+/* nav>ul>li{} */
+nav>ul>li>a{
+    text-decoration: none;
+    color: #000;
+    padding: 10px 20px;
+    transition: .5s;
+    display: block;
+}
+nav>ul>li:hover>a{
+    color: red;
+}
+nav>ul>li>ul{
+    display: none;
+    position: absolute;
+    top: 80px;
+    width: 125px;
+}
+nav:hover>ul>li>ul{
+    display: block;
+}
+nav>ul>li>ul>li{
+    text-align: center;
+    width: 100%;
+}
+nav>ul>li>ul>li:hover>a{
+    text-decoration: underline;
+}
+nav>ul>li>ul>li>a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 20px 0;
+}
