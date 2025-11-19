@@ -1,0 +1,17 @@
+#wrap{margin: 50px;}
+
+.scssBox{
+    width: 100%;
+    padding: 20px;
+    background: #ddd;
+    margin-bottom: 20px;
+}
+
+$main-color: #34db87;
+$sub-color: #2ecc71;
+$padding-size: 20px;
+
+.box{
+    background: $main-color;
+    padding: $padding-size;
+}
