@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 여백 없애기</title>
+    <style>
+        .container{
+            width: 914px;
+            border: 10px solid #000;
+        }
+        .container img{
+            /* display: block;  이미지를 블록화 시켜서 여백없앰*/
+            vertical-align: bottom; /* 인라인 요소를 유지하며 여백을 없앰 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://cdn.pixabay.com/photo/2023/08/20/20/36/irish-setter-8203156_1280.jpg" alt="개">
+    </div>
+</body>
+</html>
