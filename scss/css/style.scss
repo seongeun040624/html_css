@@ -7,11 +7,146 @@
     margin-bottom: 20px;
 }
 
-$main-color: #34db87;
+$main-color: #ffea00;
 $sub-color: #2ecc71;
 $padding-size: 20px;
 
 .box{
-    background: $main-color;
+    background: $main-color;/* $~변수명으로 불러옴 */
     padding: $padding-size;
+}
+
+//중첩(nesting)
+.card{
+    padding: $padding-size;
+    background: blueviolet;
+    .title{
+        font-size: $padding-size;//20px이 됨
+    }
+    .desc{
+        color: $sub-color;
+    }
+}
+
+//hover 등 상태 //&가 현재 선택자를 의미
+.btn{
+    padding: 12px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    &:hover{
+        background: $main-color;
+        cursor: pointer; //손가락 모양으로 커서 변경됨
+    }
+}
+
+//연산 띄어쓰기 필수 //곱하기나누기는 괄호 넣기
+.calc{
+    width: 100px + 50px;
+    height: (100px / 2);
+    margin: 10px * 2;
+    padding: $padding-size - 5px;
+    background: $main-color;
+}
+
+//믹스인 @-->미리 만들어놓고 불러오기:재사용코드
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin circle($size){
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background: red;
+}
+.profile{
+    width: 300px;
+    height: 300px;
+    background: $sub-color;
+    @include flexCenter()//함수처럼 쓰는 느낌/mixin 넣으려면 @include 붙여야 함
+}
+.circle{
+    @include circle(200px)//200px이 $size로 들어감
+}
+
+//Extend 상속
+%button-base{
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #fff;
+}
+.btn-primary{
+    @extend %button-base;
+    background: blue;
+}
+.btn-danger{
+    @extend %button-base;
+    background: red;
+}
+
+@function half($size){
+    @return $size / 2;
+}
+.half-box{
+    width: half(200px); //괄호에 있는 값을 불러줌
+    height: half(200px);
+    background: orange;
+}
+
+//map/사실 mixin이랑 뭐가 다른지 ㅁㄹ겟음
+$colors: (
+    primary: #4a6cf7,
+    danger: #ff5252,
+);
+@each $name, $color in $colors{
+    .text-#{$name}{ //#을 붙이지 않으면 불러올 수 없음
+        color: $color;
+    }
+}
+
+//for 반복문 i는 index/i라고 안 써도 된다고 > 변수 이름을 지어주는 거라 상관없음
+@for $i from 1 through 3{ //1~3까지
+    .m-#{$i}{
+        margin: $i * 10px; //i 곱하기 10px됨 > 각각 다른 값을 가지게 됨
+    }
+}
+
+.icon-wrap{
+    display: flex;
+    gap: 20px;
+}
+@for $j from 1 through 3{
+    .icon-#{$j}{
+        width: 50px;
+        height: 50px;
+        background: url(./../img/icon#{$j}.svg) no-repeat center/cover;
+    }
+}
+
+//반복문
+$tags: html, css, js;
+@each $tag in $tags{
+    .tag-#{$tag}{
+        padding: 6px 12px;
+        background: #ff9191;
+        border-radius: 6px;
+        margin-bottom: 2px;
+    }
+}
+
+//조건문 if 만약에/ else 그렇지 않으면 /== 같다
+@mixin theme($mode){
+    @if $mode == dark {
+        background: #000;
+        color: #fff;
+    }
+    @else if $mode == light{
+        background: #fff;
+        color: #000;
+    }
+}
+.theme-box{
+    @include theme(light)
 }
