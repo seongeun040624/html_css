@@ -1,0 +1,80 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+//변수
+$color-primary:#285a91;
+$color-secondary: #1f9cfd;
+$color-white:#fff;
+$color-blue-1: #a8d8ff;
+$color-blue-2: #c1e1ff;
+$color-blue-3: #d6eaff;
+$color-grey-ligth: #b9b9b9;
+$color-grey-dark: #474747;
+
+.nav{
+    &-checkbox{
+        display: none;
+    } //자식요소
+    &-button{
+        background: #c4e3ff;
+        width: 7rem;
+        height: 6rem;
+        position: fixed;
+        top: 7rem; right: 8rem;
+        cursor: pointer;
+        z-index: 99999; //최상단
+        border-radius: 2px;
+        box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+        text-align: center;
+    }//자식요소
+    &-icon{
+        position: relative; //text-allign 때문에 가운데 위치임, 그래서 자기를 기준.
+        margin-top: 3rem;
+        &::before{
+            top: -.8rem;
+        }
+        &::after{
+            top: .8rem;
+        }
+        &::before, &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            transition: .2s;
+        }
+        &, &::before, &::after{ //자기 자신과 의사요소들
+            width: 3rem;
+            height: 2px;
+            background: #333;
+            display: inline-block; //안 하면 하나가 세로로 지정됨
+        }
+    } //자손요소
+
+    &-button:hover &-icon::before{top: -1rem;}
+    &-button:hover &-icon::after{top: 1rem;}
+    &-bg{
+        width:7rem;
+        height: 6rem; // 처음엔 버튼 크기와 동일
+        position: fixed;
+        top: 7rem; right: 8rem;
+        z-index: 10;
+        transition: .8s;
+        border-radius: 2px;
+        background-image: radial-gradient($color-primary, $color-secondary);
+    }
+    &-checkbox:checked ~ &-bg{
+        transform: scale(80); //80배 확대
+    }
+    &-body{}
+
+    &-checkbox:checked ~ &-button &-icon::before{
+        top: 0;
+        transform: rotate(135deg);
+    }
+    &-checkbox:checked ~ &-button &-icon::after{
+         top: 0;
+        transform: rotate(-135deg);
+    }
+    &-checkbox:checked ~ &-button &-icon{
+        background: transparent;
+    }
+}
