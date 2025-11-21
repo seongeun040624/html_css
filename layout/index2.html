@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 레이아웃2</title>
+    <style> /* 960에 section 밑으로 떻어지게 720에 다 떨어지게 */
+    body{
+        background: pink;
+    }
+
+    header{
+        width: 100%;
+        height: 150px;
+        background: orange;
+    }
+    main{
+        display: flex;
+        width: 100%;
+        height: 700px;
+        background: rgb(0, 179, 255);
+    }
+    .sec1{
+        width: 20%;
+        height: 100%;
+        background: green;
+    }
+    .sec2{
+        width: 30%;
+        height: 100%;
+        background: rgb(179, 255, 0);
+    }
+    .sec3{
+        width: 50%;
+        height: 100%;
+        background: rgb(0, 255, 153);
+    }
+    footer{
+        width: 100%;
+        height: 150px;
+        background: rgb(0, 255, 68);
+    }
+
+    @media (max-width: 960px) {
+         main{
+            height: auto;
+            flex-wrap: wrap;
+        }
+        .sec1{
+            width: 40%;
+            height: 700px;
+            background: green;
+        }
+        .sec2{
+            width: 60%;
+            height: 700px;
+            background: rgb(179, 255, 0);
+        }
+        .sec3{
+            width: 100%;
+            height: 200px;
+            background: rgb(0, 255, 153);
+        }
+    }
+    @media (max-width: 720px) {
+        .sec1{
+            width: 100%;
+            height: 200px;
+            background: green;
+        }
+        .sec2{
+            width: 100%;
+            height: 200px;
+            background: rgb(179, 255, 0);
+        }
+    }
+    </style>
+</head>
+<body>
+        <header></header>
+        <main>
+            <section class="sec1"></section>
+            <section class="sec2"></section>
+            <section class="sec3"></section>
+        </main>
+        <footer></footer>
+</body>
+</html>
